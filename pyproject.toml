@@ -1,0 +1,4 @@
+[tool.aerich]
+tortoise_orm = "contract_watcher.__main__.TORTOISE_ORM"
+location = "./migrations"
+src_folder = "./."

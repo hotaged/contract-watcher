@@ -1,0 +1,10 @@
+fastapi
+tortoise-orm[asyncpg]
+pydantic
+aerich
+dynaconf
+passlib[bcrypt]
+python-multipart
+web3
+uvicorn
+python-jose

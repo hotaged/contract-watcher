@@ -1,0 +1,19 @@
+{
+  "host": "127.0.0.1",
+  "port": 8000,
+
+  "allow_origins": [
+    "http://127.0.0.1:8000"
+  ],
+  "allow_credentials": true,
+
+  "allow_methods": ["*"],
+  "allow_headers": ["*"],
+
+  "access_token_expires_seconds": 86400,
+  "jwt_algorithm": "HS256",
+
+  "debug": true,
+  "rpc_url": "https://data-seed-prebsc-1-s1.binance.org:8545/",
+  "poll_interval": 1.0
+}

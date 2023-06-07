@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  backend:
+    image: hotaged/contract_watcher:1.0.0
+    container_name: contract-watcher-backend
+    env_file:
+      - .env
+    ports:
+      - "${CW_PORT}:${CW_PORT}"
+    expose:
+      - ${CW_PORT}
+    networks:
+      - shared
+    restart: unless-stopped
+    command: bash -c "uvicorn contract_watcher.app:app --host ${CW_HOST} --port ${CW_PORT}"
+
+  daemon:
+    image: hotaged/contract_watcher:1.0.0
+    container_name: contract-watcher-daemon
+    env_file:
+      - .env
+    networks:
+      - shared
+    restart: unless-stopped
+    command: bash -c "cw-daemon"
+
+networks:
+  shared:
+    external: true
